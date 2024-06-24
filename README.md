@@ -6,7 +6,7 @@ DAD Design  (edits and translation by Kreopensas)
 
 ## Présentation
 DaisySeedGFX is a graphics library for Electrosmith's Daisy Seed platform.
-The library currently only supports ST7735 and ST7789 controllers. A priori the library should be able to be adapted to any controller quite easily.
+The library currently only supports ST7735 and ST7789 controllers. The library should be able to be adapted to any controller quite easily.
 
 The library uses an intermediate frame buffer between the graphics primitives and the controller. The modifications made in the frame buffer are transmitted to the controller using SPI transfers under DMA. In order to reduce transfers the frame buffer is divided into blocks -> only modified blocks are transferred to the screen.
 
