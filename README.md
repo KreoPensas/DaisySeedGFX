@@ -2,30 +2,30 @@
 TFT graphical display library for Daisy Seed. ST7789 and ST7735 driver
 
 ## Author
-DAD Design
+DAD Design  (edits and translation by Kreopensas)
 
 ## Présentation
-DaisySeedGFX est une bibliothèque graphique pour la plateforme Daisy Seed de Electrosmith.
-La bibliothèque prend en charge pour le moment uniquement les contrôleurs ST7735 et ST7789. A priori la bibliothèque doit pouvoir être adaptée à n’importe quel contrôleur assez facilement.
+DaisySeedGFX is a graphics library for Electrosmith's Daisy Seed platform.
+The library currently only supports ST7735 and ST7789 controllers. A priori the library should be able to be adapted to any controller quite easily.
 
-La bibliothèque utilise un frame buffer intermédiaire ente les primitives graphiques et le contrôleur. Les modifications réalisées dans le frame buffer sont transmises au contrôleur utilisant les transferts SPI sous DMA. Afin de réduire les transferts le frame buffer est divisé en blocs -> seuls les blocs modifiés sont transférés vers l’écran.
+The library uses an intermediate frame buffer between the graphics primitives and the controller. The modifications made in the frame buffer are transmitted to the controller using SPI transfers under DMA. In order to reduce transfers the frame buffer is divided into blocks -> only modified blocks are transferred to the screen.
 
-Les primitives graphiques sont minimalistes, elles pourront être complétées en fonction des besoins.
+The graphic primitives are minimalist, they can be supplemented according to needs.
 
 
 ## Mise en oeuvre
-Le code est modifiable et compilable sous VS Code dans l’environnement de développement du Daisy Seed (voir le https://github.com/electro-smith).
+The code can be modified and compiled under VS Code in the Daisy Seed development environment (see https://github.com/electro-smith).
 
 ### Configuration
-1. Creez un projet avec l'outil helper.py (ou autre...).
-2. Clonez la librairie dans le dossier DaisySeedGFX à l'interieur de votre dossier projet.
-3. Editez le fichier Makefile et ajoutez DaisySeedGFX/Frame.cpp DaisySeedGFX/GFX.cpp DaisySeedGFX/TFT_SPI.cpp dans la ligne CPP_SOURCES.
-4. Copiez le fichier UserConfig.h dans voire dossier projet et configurez le en fonction de votre écran et des pins utilisées. 
+Create a project with the helper.py tool (or other...).
+Clone the library into the DaisySeedGFX folder inside your project folder.
+Edit the Makefile and add DaisySeedGFX/Frame.cpp DaisySeedGFX/GFX.cpp DaisySeedGFX/TFT_SPI.cpp in the CPP_SOURCES line.
+Copy the UserConfig.h file into your project folder and configure it according to your screen and the pins used.
 
 ### Fonts
-Pour créer des fonts utilisez l’outil https://rop.nl/truetype2gfx/. Chaque font est enregistrée un fichier xxx.h.
+To create fonts use the tool https://rop.nl/truetype2gfx/. Each font is saved as an xxx.h file.
 
 ### Exemples
-Des exemples d'implemantation sont données dans les repository :
+Examples of implementation are given in the repositories:
 1. https://github.com/DADDesign-Projects/DEMO_DaisyGFX_ST7735
 2. https://github.com/DADDesign-Projects/DEMO_DaisyGFX_ST7789
